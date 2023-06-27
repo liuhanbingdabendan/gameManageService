@@ -22,3 +22,14 @@ export interface WeatherInfo {
     Radar: string;
   };
 }
+
+export interface User {
+  id: number;
+  name: string;
+  pwd: string;
+}
+
+export interface responseType {
+  code: string | number;
+  data: any;
+}

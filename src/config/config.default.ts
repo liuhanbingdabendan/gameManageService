@@ -1,5 +1,6 @@
 import { MidwayConfig } from '@midwayjs/core';
 import { Photo } from '../entity/photo';
+import { User } from '../entity/user';
 
 export default {
   // use for cookie sign key, should change to your own and keep security
@@ -10,18 +11,24 @@ export default {
   view: {
     defaultViewEngine: 'nunjucks',
   },
+  cors: {
+    credentials: false,
+  },
+  webSocket: {
+    port: 3000,
+  },
   typeorm: {
     dataSource: {
       default: {
         type: 'mysql',
-        host: '47.119.157.171',
+        host: '124.222.120.86',
         port: 3306,
         username: 'root',
-        password: 'admin',
-        database: 'world',
+        password: 'liu5211170.0',
+        database: 'pyqt',
         synchronize: false,
         logging: false,
-        entities: [Photo],
+        entities: [Photo, User],
       },
     },
   },
