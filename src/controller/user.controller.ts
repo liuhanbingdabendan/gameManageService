@@ -31,10 +31,33 @@ export class UserController {
   }
 
   @Post('/edit')
-  async editData(@Body('id') id: string): Promise<responseType> {
-    console.log(id);
-    const result = await this.UserService.getAllUser();
-    console.log(result);
+  async editData(@Body() params: any): Promise<responseType> {
+    const result = await this.UserService.edit(params);
+    console.log(result, 'result');
+    return {
+      code: 200,
+      data: result,
+    };
+  }
+  @Post('/deleteUser')
+  async deleteData(@Body('id') id: string): Promise<responseType> {
+    const result = await this.UserService.deleteUser({ id });
+    console.log(result, 'result');
+    if (result) {
+      return {
+        code: 200,
+        data: result,
+      };
+    }
+    return {
+      code: 500,
+      data: '删除的用户不存在',
+    };
+  }
+  @Post('/getSkill')
+  async getSkill(): Promise<responseType> {
+    const result = await this.UserService.getSkill();
+    console.log(result, 'getSkill result');
     return {
       code: 200,
       data: result,

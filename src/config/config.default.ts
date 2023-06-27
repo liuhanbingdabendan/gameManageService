@@ -1,6 +1,7 @@
 import { MidwayConfig } from '@midwayjs/core';
 import { Photo } from '../entity/photo';
 import { User } from '../entity/user';
+import { Skill } from '../entity/skill';
 
 export default {
   // use for cookie sign key, should change to your own and keep security
@@ -28,7 +29,7 @@ export default {
         database: 'pyqt',
         synchronize: false,
         logging: false,
-        entities: [Photo, User],
+        entities: [Photo, User, Skill],
       },
     },
   },
