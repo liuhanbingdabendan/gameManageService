@@ -2,10 +2,10 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
-  JoinColumn,
+  // OneToOne,
+  // JoinColumn,
 } from 'typeorm';
-import { User } from './user';
+// import { User } from './user';
 
 @Entity('skill')
 export class Skill {
